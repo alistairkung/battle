@@ -1,12 +1,12 @@
 <body>
-  <%= @player_1 %> vs <%= @player_2 %>
+  <%= @player_1.name %> vs <%= @player_2.name %>
   <section>
-    <p> <%= @player_2 %>'s health: <span id="p2_health"> <%= @health_2 %> <span> </p>
+    <p> <%= @player_2 %>'s health: <span id="p2_health"> <%= @player_2.health %> <span> </p>
   </section>
   <form action="/attack" method="post">
     <button type="submit">Attack</button>
   </form>
-  <% if @attack == true %>
-    You attacked <%= @player_2 %>!
+  <% if @player_1.last_move == :attack %>
+    You attacked <%= @player_2.name %>!
   <% end %>
 </body>

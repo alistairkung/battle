@@ -30,6 +30,18 @@ describe Player do
     it "decreases the other player's health by 10" do
       expect{john.hit(bill)}.to change{bill.health}.by(-10)
     end
+
+    it "should record the last move as attacked" do
+      john.hit(bill)
+      expect(john.last_move).to eq(:attack)
+    end
   end
+
+  describe "#last_move" do
+    it "should initialize as nil" do
+      expect(john.last_move).to be nil
+    end
+  end
+
 
 end
