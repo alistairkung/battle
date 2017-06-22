@@ -1,4 +1,5 @@
 require 'sinatra'
+require "player"
 
 class Battle < Sinatra::Base
   enable :sessions
@@ -8,8 +9,8 @@ class Battle < Sinatra::Base
   end
 
   post '/names' do
-    session[:player_1] = params[:player_1]
-    session[:player_2] = params[:player_2]
+    $player_one = Player.new(params[:player_1])
+    $player_two = Player.new(params[:player_2])
     session[:health_2] = 100
     session[:attack] = false
     redirect '/play'
@@ -22,8 +23,8 @@ class Battle < Sinatra::Base
   end
 
   get '/play' do
-    @player_1 = session[:player_1]
-    @player_2 = session[:player_2]
+    @player_1 = $player_one.name
+    @player_2 = $player_two.name
     @health_2 = session[:health_2]
     @attack = session[:attack]
     erb(:play)
