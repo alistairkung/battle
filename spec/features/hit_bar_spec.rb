@@ -5,12 +5,6 @@ feature "player health" do
     expect(page).to have_css('#p1_health', :text => '100')
   end
 
-  scenario "player one clicks attack button" do
-    sign_in_and_play
-    click_on 'Attack'
-    expect(page).to have_content('player attacked player2!')
-  end
-
   scenario "when game enters 2" do
     sign_in_and_play
     click_on 'Attack'

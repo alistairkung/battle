@@ -27,6 +27,12 @@
 
 
   <% if $game.last_move == :player_one_attack %>
+    <h2> <%= $game.player_one.name %>'s turn to attack</h2>
     <p>  <%= $game.player_one.name %> attacked <%= $game.player_two.name %>! </p>
+  <% end %>
+
+  <% if $game.last_move == :player_two_attack %>
+    <h2> <%= $game.player_two.name %>'s turn to attack</h2>
+    <p> <%= $game.player_two.name %> attacked <%= $game.player_one.name %>! </p>
   <% end %>
 </body>
