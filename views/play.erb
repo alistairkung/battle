@@ -8,7 +8,7 @@
   </form>
 
   <p> test </p>
- <% if $game.player_one.last_move == :attack %> 
-  <p>  You attacked <%= $game.player_two.name %> </p>
+ <% if $game.last_move == :player_one_attack %>
+  <p>  You attacked <%= $game.player_two.name %>! </p>
  <% end %>
- </body>
+</body>

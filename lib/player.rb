@@ -19,8 +19,5 @@ class Player
     @last_move = :attack
   end
 
-  def set_last_move(move)
-      @last_move = move
-  end
 
 end
