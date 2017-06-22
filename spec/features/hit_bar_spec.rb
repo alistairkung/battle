@@ -1,4 +1,3 @@
-
 feature "player health" do
   scenario "on starting the game" do
     sign_in_and_play
