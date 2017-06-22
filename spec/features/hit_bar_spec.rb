@@ -7,7 +7,7 @@ feature "player health" do
   scenario "player clicks attack button" do
     sign_in_and_play
     click_on 'Attack'
-    expect(page).to have_content('You attacked player2!')
+    expect(page).to have_content('player attacked player2!')
   end
 
   scenario "player 2 is attacked" do

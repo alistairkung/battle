@@ -7,8 +7,7 @@
     <button type="submit">Attack</button>
   </form>
 
-  <p> test </p>
- <% if $game.last_move == :player_one_attack %>
-  <p>  You attacked <%= $game.player_two.name %>! </p>
- <% end %>
+  <% if $game.last_move == :player_one_attack %>
+    <p>  <%= $game.player_one.name %> attacked <%= $game.player_two.name %>! </p>
+  <% end %>
 </body>
