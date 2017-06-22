@@ -3,4 +3,10 @@ feature "player health" do
     sign_in_and_play
     expect(page).to have_css('#p2_health', :text => '100')
   end
+
+  scenario "player 2 is attacked" do
+    sign_in_and_play
+    click_on 'Attack'
+    expect(page).to have_css('#p2_health', :text => '90')
+  end
 end
