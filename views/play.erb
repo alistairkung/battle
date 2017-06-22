@@ -1,11 +1,30 @@
 <body>
   <%= $game.player_one.name %> vs <%= $game.player_two.name %>
-  <section>
-    <p> <%= $game.player_two.name %>'s health: <span id="p2_health"> <%= $game.player_two.health %> <span> </p>
-  </section>
-  <form action="/attack" method="post">
-    <button type="submit">Attack</button>
-  </form>
+
+  <% if $game.turn == 1 %>
+    <section>
+      <p> <%= $game.player_two.name %>'s health: <span id="p2_health"> <%= $game.player_two.health %> <span> </p>
+    </section>
+    <section>
+      <p> <%= $game.player_one.name %>'s health: <span id="p1_health"> <%= $game.player_one.health %> <span> </p>
+    </section>
+    <form action="/player_one_attack" method="post">
+      <button type="submit">Attack</button>
+    </form>
+  <% end %>
+
+  <% if $game.turn == 2 %>
+    <section>
+      <p> <%= $game.player_one.name %>'s health: <span id="p1_health"> <%= $game.player_one.health %> <span> </p>
+    </section>
+    <section>
+      <p> <%= $game.player_two.name %>'s health: <span id="p2_health"> <%= $game.player_two.health %> <span> </p>
+    </section>
+    <form action="/player_two_attack" method="post">
+      <button type="submit">Attack</button>
+    </form>
+  <% end %>
+
 
   <% if $game.last_move == :player_one_attack %>
     <p>  <%= $game.player_one.name %> attacked <%= $game.player_two.name %>! </p>
