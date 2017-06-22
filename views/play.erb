@@ -6,4 +6,7 @@
   <form action="/attack" method="post">
     <button type="submit">Attack</button>
   </form>
+  <% if @attack == true %>
+    You attacked <%= @player_2 %>!
+  <% end %>
 </body>
