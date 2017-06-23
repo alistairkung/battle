@@ -14,4 +14,10 @@ feature "battle feedback" do
     expect(page).to have_content("player's turn to attack")
     expect(page).to have_content('player2 attacked player!')
   end
+
+  scenario "when player two faints" do
+    kill_player_two
+    expect(page).to have_content("player won!")
+  end
+
 end
