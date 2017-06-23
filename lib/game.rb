@@ -5,6 +5,14 @@ class Game
 
   attr_reader :player_two, :player_one, :last_move, :turn
 
+  def self.create(player_one, player_two)
+    @game = Game.new(player_one, player_two)
+  end
+
+  def self.instance
+    @game
+  end
+
   def initialize(player_one = Player.new(name, health), player_two = Player.new(name, health))
     @player_one = player_one
     @player_two = player_two
